@@ -1,0 +1,211 @@
+/* 全局样式 */
+body {
+    margin: 0; /* 移除默认外边距 */
+    font-family: "Rubik", sans-serif; /* 设置字体 */
+    background: #111; /* 设置背景颜色 */
+}
+
+* {
+    box-sizing: border-box; /* 统一盒模型 */
+}
+
+/* 标题样式 */
+h1, h3 {
+    font-weight: 400; /* 设置字体粗细 */
+}
+
+/* 天气应用主体部分 */
+.weather-app {
+    min-height: 100vh; /* 最小高度为视口高度 */
+    background-image: url(./images/day/cloudy.jpg); /* 背景图片 */
+    background-position: center; /* 背景图片居中 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-size: cover; /* 背景图片覆盖整个元素 */
+    color: #fff; /* 文字颜色 */
+    position: relative; /* 相对定位 */
+    transition: 500ms; /* 过渡效果 */
+    opacity: 1; /* 不透明度 */
+}
+
+/* 背景遮罩层 */
+.weather-app::before {
+    content: ""; /* 伪元素内容 */
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部位置 */
+    left: 0; /* 左侧位置 */
+    width: 100%; /* 宽度 */
+    height: 100%; /* 高度 */
+    background: rgba(0, 0, 0, 0.3); /* 背景色 */
+    z-index: 0; /* 层叠顺序 */
+}
+
+/* 容器样式 */
+.container {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部位置 */
+    left: 0; /* 左侧位置 */
+    width: 100%; /* 宽度 */
+    height: 100%; /* 高度 */
+    display: flex; /* 弹性布局 */
+    justify-content: space-between; /* 子元素水平分布 */
+    align-items: flex-start; /* 子元素垂直对齐 */
+    flex-direction: column; /* 子元素排列方向 */
+    padding: 2em 3em 4em 3em; /* 内边距 */
+}
+
+/* 容器内的子元素样式 */
+.container > div {
+    display: flex; /* 弹性布局 */
+    justify-content: center; /* 子元素水平居中 */
+    align-items: center; /* 子元素垂直居中 */
+}
+
+/* 城市和时间信息 */
+.city-time, .temp, .weather {
+    margin: 0 1em; /* 外边距 */
+}
+
+.city-time h1 {
+    margin: 0; /* 移除默认外边距 */
+    margin-bottom: 0.2em; /* 下边距 */
+    font-size: 3em; /* 字体大小 */
+}
+
+/* 温度显示 */
+.temp {
+    font-size: 7em; /* 字体大小 */
+    margin: 0; /* 移除默认外边距 */
+}
+
+/* 天气状况图标和描述 */
+.weather img {
+    display: block; /* 块级元素 */
+    margin: 0.5em 0; /* 上下边距 */
+}
+
+/* 功能面板 */
+.panel {
+    position: absolute; /* 绝对定位 */
+    width: 40%; /* 宽度 */
+    height: 100%; /* 高度 */
+    top: 0; /* 顶部位置 */
+    right: 0; /* 右侧位置 */
+    background: rgba(110, 110, 110, 0.25); /* 背景色 */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* 阴影效果 */
+    backdrop-filter: blur(10px); /* 模糊效果 */
+    -webkit-backdrop-filter: blur(10px); /* WebKit 浏览器的模糊效果 */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* 边框 */
+    z-index: 1; /* 层叠顺序 */
+    padding: 3em 2em; /* 内边距 */
+    overflow-y: scroll; /* 垂直滚动条 */
+}
+
+/* 搜索表单 */
+.panel form {
+    margin-bottom: 3em; /* 下边距 */
+}
+
+/* 提交按钮 */
+.submit {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 顶部位置 */
+    right: 0; /* 右侧位置 */
+    padding: 1.5em; /* 内边距 */
+    margin: 0; /* 移除默认外边距 */
+    border: none; /* 移除边框 */
+    outline: none; /* 移除轮廓线 */
+    cursor: pointer; /* 鼠标指针样式 */
+    color: #fff; /* 文字颜色 */
+    background: #fa6d1b; /* 背景色 */
+    font-size: 1.2em; /* 字体大小 */
+    transition: 0.4s; /* 过渡效果 */
+}
+
+/* 提交按钮悬停样式 */
+.submit:hover {
+    background: #fff !important; /* 背景色 */
+    color: #000; /* 文字颜色 */
+}
+
+/* 搜索输入框 */
+.search {
+    background: none; /* 背景色 */
+    border: none; /* 移除边框 */
+    border-bottom: 1px solid #ccc; /* 下边框 */
+    padding: 0 1em 0.5em 0; /* 内边距 */
+    width: 80%; /* 宽度 */
+    color: #fff; /* 文字颜色 */
+    font-size: 1.1em; /* 字体大小 */
+}
+
+/* 搜索输入框聚焦样式 */
+.search:focus {
+    outline: none; /* 移除轮廓线 */
+}
+
+/* 搜索输入框占位符 */
+.search::placeholder {
+    color: #ccc; /* 占位符颜色 */
+}
+
+/* 划线 */
+.panel ul {
+    padding: 0 0 1em 0; /* 内边距 */
+    margin: 2em 0; /* 外边距 */
+    border-bottom: 1px #ccc solid; /* 下边框 */
+}
+
+/* 城市列表项 */
+.panel ul li {
+    color: #ccc; /* 文字颜色 */
+    margin: 2.5em 0; /* 外边距 */
+}
+
+/* 城市列表标题 */
+.panel ul h4 {
+    margin: 3em 0; /* 外边距 */
+}
+
+/* 城市名称 */
+.city {
+    display: block; /* 块级元素 */
+    cursor: pointer; /* 鼠标指针样式 */
+}
+
+/* 城市名称悬停样式 */
+.city:hover {
+    color: #fff; /* 文字颜色 */
+}
+
+/* 天气详情列表项 */
+.details li {
+    display: flex; /* 弹性布局 */
+    justify-content: space-between; /* 子元素水平分布 */
+    align-items: center; /* 子元素垂直居中 */
+}
+
+/* 屏幕自适应 */
+@media screen and (max-width: 800px) 
+{ 
+    .panel,.container
+    {
+        position: relative;
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width: 500px) 
+{
+    html{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 300px) 
+{
+    .weather-app{
+        min-height: 40em;
+        
+    }
+}

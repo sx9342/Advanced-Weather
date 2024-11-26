@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入自定义样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+    <title>Advanced Weather</title>
+
+</head>
+<body>
+    
+    <!-- 天气应用的主体部分 -->
+    <div class="weather-app">
+        <!-- 内容容器 -->
+        <div class="container">
+            <!-- 应用品牌名称 -->
+            <h3 class="brand">the weather</h3>
+            <div>
+                <!-- 当前温度显示 -->
+                <h1 class="temp">16&#176</h1>
+                <!-- 城市和时间信息 -->
+                <div class="city-time">
+                    <h1 class="name">London</h1>
+                    <small>
+                        <span class="time">6:09</span>
+                        -
+                        <span class="date">Monday Sep 19</span>
+                    </small>
+                </div>
+                <!-- 天气状况图标和描述 -->
+                <div class="weather">
+                    <img src=""
+                    class="icon" 
+                    alt="icon"
+                    width="50"
+                    height="50"
+                    />
+                    <span class="condition">Cloudy</span>
+                </div>
+            </div>
+        </div>
+        <!-- 功能面板 -->
+        <div class="panel">
+            <!-- 地点搜索表单 -->
+            <form id="locationInput">
+                <input type="text" 
+                       class="search"
+                       placeholder="Search Location" 
+                        />
+            <button type="submit" class="submit">
+                <i class="fas fa-search"></i>
+            </button>                        
+            </form>
+            <!-- 城市列表 -->
+            <ul class="cities">
+                <h4>Commonly Used Cities</h4>
+                <li class="city">New York</li>
+                <li class="city">Beijing</li>
+                <li class="city">Paris</li>
+                <li class="city">Tokyo</li>
+                <li class="city">Moscow</li>
+                <li class="city">London</li>
+                <li class="city">Sydney</li>
+            </ul>
+            <!-- 天气详情 -->
+            <ul class="details">
+                <h4>Weather Details</h4>
+                <li>
+                    <span>Cloudy</span>
+                    <span class="cloud">89%</span>
+                </li>
+                <li>
+                    <span>Humidity</span>
+                    <span class="humidity">64%</span>
+                </li>
+                <li>
+                    <span>Wind</span>
+                    <span class="wind">8km/h</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
